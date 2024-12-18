@@ -18,18 +18,23 @@ S-Box Analyzer merupakan alat untuk menyediakan analisis properti kriptografi un
     ```bash
     git clone https://github.com/hanivianka/sbox-kripto
     ```
+    
+2. Masuk ke direktori tempat meng-clone repositori:
+    ```bash
+    cd [nama-repositori]
+    ```
 
-2. Instal dependensi yang diperlukan:
+3. Instal dependensi yang diperlukan:
     ```bash
     pip install -r requirements.txt
     ```
 
-3. Jalankan aplikasi:
+4. Jalankan aplikasi:
     ```bash
     streamlit run kripto-gui.py
     ```
 
-4. Buka aplikasi di browser `http://localhost:8501`.
+5. Buka aplikasi di browser `http://localhost:8501`.
 
 # Penggunaan
 
