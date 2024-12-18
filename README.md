@@ -64,6 +64,8 @@ Pastikan memiliki:
 
 # Program Hasil Deploy
 
-```
 https://sbox-testing-kripto.streamlit.app/
-```
+
+# Paper Referensi
+
+https://link.springer.com/article/10.1007/s11071-024-10414-3
