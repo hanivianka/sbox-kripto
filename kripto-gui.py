@@ -114,6 +114,42 @@ def main():
         st.markdown("<h1 font-size: 26px; color: black;'>⚙️ S-Box Analyzer</h1>", unsafe_allow_html=True)
         st.image("https://www.freeiconspng.com/uploads/3d-cube-transparent-png-4.png", width=200)
         st.markdown("<p style='font-size: 18px;'>Upload file, pilih analisis, dan unduh hasil.</p>", unsafe_allow_html=True)
+        st.markdown("### Contoh File S-Box")
+        st.markdown("Anda dapat mengunduh contoh file S-Box di bawah ini:")
+        
+        # Membuat DataFrame contoh S-Box dengan data yang diberikan
+        example_sbox = pd.DataFrame([
+            [99, 77, 116, 121, 232, 43, 110, 44, 199, 231, 38, 172, 229, 223, 165, 164],
+            [205, 177, 143, 220, 50, 237, 176, 66, 101, 53, 56, 74, 195, 42, 2, 69],
+            [85, 201, 10, 131, 21, 119, 221, 151, 203, 1, 36, 181, 138, 115, 146, 41],
+            [71, 78, 14, 210, 84, 183, 134, 32, 52, 124, 108, 118, 18, 238, 204, 230],
+            [25, 5, 54, 83, 215, 7, 19, 137, 57, 0, 8, 39, 93, 139, 120, 104],
+            [127, 48, 169, 135, 242, 12, 6, 31, 4, 28, 126, 227, 207, 243, 241, 47],
+            [113, 29, 148, 250, 180, 125, 187, 35, 153, 142, 9, 130, 240, 23, 163, 144],
+            [219, 30, 68, 149, 198, 55, 59, 147, 197, 170, 189, 89, 95, 98, 128, 251],
+            [63, 87, 49, 253, 168, 252, 26, 236, 88, 158, 81, 245, 58, 100, 22, 20],
+            [244, 96, 75, 72, 167, 206, 129, 247, 76, 51, 234, 166, 255, 178, 90, 17],
+            [109, 193, 171, 182, 103, 235, 112, 117, 202, 226, 212, 16, 209, 37, 60, 150],
+            [159, 80, 157, 33, 122, 160, 73, 132, 174, 65, 224, 61, 217, 97, 185, 225],
+            [11, 156, 92, 190, 152, 140, 175, 79, 233, 123, 13, 106, 15, 191, 67, 254],
+            [228, 200, 114, 141, 162, 133, 45, 136, 62, 186, 3, 196, 111, 213, 34, 161],
+            [94, 216, 188, 249, 145, 179, 24, 154, 208, 239, 40, 211, 46, 222, 27, 102],
+            [214, 86, 194, 82, 184, 192, 218, 105, 91, 246, 64, 107, 173, 155, 248, 70]
+        ])
+        
+        # Mengonversi DataFrame ke format Excel
+        excel_buffer = BytesIO()
+        with pd.ExcelWriter(excel_buffer, engine='openpyxl') as writer:
+            example_sbox.to_excel(writer, index=False, sheet_name='S-Box', header=False)
+            writer.close()
+        
+        # Tombol unduh untuk file Excel
+        st.download_button(
+            label="Unduh Contoh S-Box",
+            data=excel_buffer,
+            file_name="sbox_table.xlsx",
+            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        )
         
         uploaded_file = st.file_uploader("Upload S-Box File (Excel)", type=["xlsx", "xls"])
 
