@@ -16,7 +16,7 @@ S-Box Analyzer merupakan alat untuk menyediakan analisis properti kriptografi un
 
 1. Clone repositori:
     ```bash
-    git clone https://github.com/hanivianka/sbox-kripto
+    git clone https://github.com/hanivianka/sbox-kripto.git
     ```
     
 2. Masuk ke direktori tempat meng-clone repositori:
